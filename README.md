@@ -9,6 +9,15 @@ $ npm install
 
 ```
 
+## Add environment:
+
+TYPEORM_HOST =localhost
+TYPEORM_USERNAME =root
+TYPEORM_PASSWORD = R00t
+TYPEORM_PORT = 3306
+TYPEORM_LOGGING = true
+DB_NAME = restaurant
+
 ## Create database:
 
 CREATE DATABASE `restaurant` /_!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci _/ /_!80016 DEFAULT ENCRYPTION='N' _/;
