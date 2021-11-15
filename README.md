@@ -45,6 +45,12 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Swagger API:
+
+```
+http://localhost:3000/docs/
+```
+
 ## Create restaurant:
 
 curl -X 'POST' \
