@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Category } from 'src/category/category.entity';
+import { CategoryDto } from 'src/category/dto/category.dto';
 
 export class RestaurantDto {
   @ApiProperty()
@@ -32,6 +32,6 @@ export class RestaurantDto {
   view: number;
   @ApiProperty()
   status: boolean;
-  @ApiProperty()
-  categories: number[];
+  @ApiProperty({ type: CategoryDto })
+  categories: CategoryDto[];
 }

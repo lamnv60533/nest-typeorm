@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { Category } from './category.entity';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { UpdateResult, DeleteResult } from 'typeorm';
 @Injectable()
 export class CategoryService {
@@ -15,6 +14,16 @@ export class CategoryService {
   }
   async findOne(category: Category): Promise<Category> {
     return await this.categoryRepository.findOne(category);
+  }
+  async findByIds(ids: number[]): Promise<Category[]> {
+    const cateIds = ids.map(
+      (id) => Object.assign({}, new Category(), id) as Category,
+    );
+    return await this.categoryRepository.find({
+      where: {
+        id: In(ids),
+      },
+    });
   }
   async create(category: Category): Promise<Category> {
     return await this.categoryRepository.create(category);

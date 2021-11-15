@@ -32,6 +32,35 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Create restaurant:
+
+curl -X 'POST' \
+ 'http://localhost:3000/api/restaurant' \
+ -H 'accept: _/_' \
+ -H 'Content-Type: application/json' \
+ -d '{
+"name": "string",
+"city": "string",
+"closingTime": "string",
+"openingTime": "string",
+"district": "string",
+"email": "string",
+"isActive": true,
+"isParking": true,
+"isWifi": true,
+"lat": 10,
+"long": 10,
+"phoneNumber": "string",
+"website": "string",
+"view": 0,
+"status": true,
+"categories": {
+"name": "cafe",
+"id": 1,
+"isActive": true
+}
+}'
+
 ## Test
 
 ```bash

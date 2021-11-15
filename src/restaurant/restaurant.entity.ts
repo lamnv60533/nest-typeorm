@@ -93,7 +93,7 @@ export class Restaurant {
       referencedColumnName: 'id',
     },
   })
-  @ManyToMany(() => Category)
+  @ManyToMany(() => Category, { cascade: true })
   categories: Category[];
 
   @Column({ name: 'created_at', default: () => `now()`, nullable: false })
